@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Skylanders</title>
+</head>
+<body>
+    <div class="banner">
+        <img src="images/Skylanders_Logo.webp" alt="skylanders logo">
+        <div class="bannerFlexbox" id="series-banner"></div>
+        <div class="bannerFlexbox" id="filter-banner" style="display: none;">
+            <div class="bannerSection">
+                <button id="selected-series" onclick="backToMenu()"></button>
+                <button onclick="newGame()">
+                    <img src="images/icons/undo.png" />
+                </button>
+            </div>
+
+            <div class="bannerLine"></div>
+            <div class="bannerSection" id="figuretype-filters">
+            </div>
+
+            <div class="bannerLine"></div>
+            <div class="bannerSection" id="element-filters">
+            </div>
+
+            <div class="bannerLine"></div>
+            <div class="bannerSection" id="special-filters">
+            </div>
+        </div>
+    </div>
+
+    <div class="portal card">
+        <div class="playerPortal" id="playerPortal1" onclick="selectPlayer(event)">
+            <p>-</p>
+            <img src="images/portal_light.png" />
+            <div>
+                <p>P1</p>
+                <button class="buttonNew" onclick="randomSkylander(1)">
+                    <img src="images/icons/dice.png" />
+                </button>
+                <button class="buttonDead" onclick="deadSkylander(1)">
+                    <img src="images/icons/dead.png" />
+                </button>
+            </div>
+        </div>
+        <div class="portalLine"></div>
+        <div class="playerPortal" id="playerPortal2" onclick="selectPlayer(event)">
+            <p>-</p>
+            <img src="images/portal_light.png" />
+            <div>
+                <p>P2</p>
+                <button class="buttonNew" onclick="randomSkylander(2)">
+                    <img src="images/icons/dice.png" />
+                </button>
+                <button class="buttonDead" onclick="deadSkylander(2)">
+                    <img src="images/icons/dead.png" />
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="gallery" id="gallery">
+        
+    </div>
+
+    <script src="data/skylanders_chars.js"></script>
+    <script src="data/skylanders_series.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

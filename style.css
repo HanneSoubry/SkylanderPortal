@@ -1,0 +1,235 @@
+body {
+    background-color: #e4f2ff;
+    margin: 0;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    display: grid;
+    grid-template-areas:
+        "banner banner"
+        "portal gallery";
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto minmax(0, 1fr);
+    height: 100vh;
+}
+
+/* BANNER */
+.banner {
+    background-color: #6eb8ff;
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+    height: fit-content;
+    grid-area: banner;
+}
+
+.banner > img {
+    align-self: center;
+    width: 150px;
+    max-width: 20%;
+}
+
+.bannerFlexbox {
+    flex: 1;
+    min-width: 0;
+    height: fit-content;
+    display: flex;
+    gap: 10px;
+    align-items: start;
+    overflow-x: auto; /* horizontal scrollbar if needed */
+}
+
+#series-banner > button {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    height: 100px;
+    width: 100px;
+    border-radius: 10px;
+    border-width: 0;
+    flex-shrink: 0;
+}
+
+.banner button > img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.sectionButton {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    height: 100px;
+    width: 50px;
+    border-radius: 10px;
+    border-width: 0;
+    flex-shrink: 0;
+    writing-mode: vertical-rl;
+}
+
+.bannerSection {
+    width: auto;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(2, 45px);
+    grid-auto-columns: 45px;
+    gap: 10px;
+}
+
+.bannerSection > button {
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+    border-width: 0;
+    padding: 5px;
+    align-content: center;
+    justify-content: center;
+}
+
+.bannerSection .active {
+    border: darkgreen 2px solid;
+}
+
+.bannerLine {
+    width: 2px;
+    height: 100px;
+
+    padding: 0;
+    margin: 0;
+
+    background-color: darkblue;
+    border-radius: 2px;
+}
+
+/* PORTAL */
+.portalLine {
+    width: 100%;
+    height: 2px;
+    padding: 0;
+    margin: 0;
+    background-color: darkblue;
+    border-radius: 2px;
+}
+
+.portal {
+    aspect-ratio: 2 / 3;
+    margin: 20px 10px 20px 20px;
+    grid-area: portal;
+    padding: 20px;
+
+    display: grid;
+    grid-template-rows: 1fr auto 1fr;
+}
+
+.playerPortal {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto minmax(0, 1fr);
+    grid-template-areas:
+        "name button"
+        "image button";
+}
+
+.playerPortal.selected{
+    border: 1px solid gray;
+    box-sizing: border-box;
+}
+
+.playerPortal p {
+    grid-area: name;
+    margin: 10px 0 10px 0;
+    text-align: center;
+}
+
+.playerPortal img {
+    grid-area: image;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.playerPortal div {
+    grid-area: button;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+    height: fit-content;
+    align-self: center;
+}
+
+.playerPortal div p {
+    margin: 0;
+}
+
+.playerPortal button {
+    width: 75%;
+    aspect-ratio: 1;
+    justify-self: center;
+    align-self: center;
+    border: 0;
+    border-radius: 10px;
+}
+
+.playerPortal .buttonNew {
+    background-color: palegreen;
+}
+
+.playerPortal .buttonDead {
+    background-color: lightcoral;
+}
+
+
+/* GALLERY */
+.gallery {
+    grid-area: gallery;
+    min-height: 0;
+    overflow-y: auto;
+    display: flex;
+    margin: 20px 20px 20px 10px;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.gallery > .card {
+    width: 150px;
+    height: fit-content;
+    padding: 10px;
+}
+
+/* CARDS */
+.card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 3px solid white;
+}
+
+.card.dead {
+    border: 3px solid red;
+}
+
+.card.inUse {
+    border: 3px solid dodgerblue;
+}
+
+.card > p {
+    margin: 0 0 5px 0;
+    text-align: center;
+}
+
+.card > .portrait {
+    width: 100%;
+    border-top: solid lightgrey 1px;
+    border-bottom: solid lightgrey 1px;
+    padding: 10px 0;
+}
+
+.card > .icon-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-top: 5px;
+    height: 30px;
+}
+
+.icon-list > .icon {
+    max-width: 100%;
+    max-height: 100%;
+}
